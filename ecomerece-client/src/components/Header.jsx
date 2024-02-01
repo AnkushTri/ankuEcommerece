@@ -2,19 +2,21 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import NavBar from "./NavBar";
+import { FaCartPlus } from "react-icons/fa";
 
 const Header = () => {
     return (
         <MainHeader>
-            <NavLink to="/">
-                <img src="./images/hero.jpg" alt="my logo img" width={90} height={60} style={{borderRadius:"50%"}}/>
-            </NavLink>
+                <div className="divo">
+                <div><FaCartPlus /></div> 
+                 <p>Ankush Kart</p>
+                </div>
             <NavBar />
         </MainHeader>
     );
 };
-
-const MainHeader = styled.header`
+;
+const MainHeader = styled.div`
   padding: 0 4.8rem;
   height: 7rem;
   background-color: ${({ theme }) => theme.colors.bg};
@@ -22,5 +24,13 @@ const MainHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   position: relative;
-`;
+  .divo{
+    font-size:2.5rem;
+    display:flex;
+    gap:1rem;
+    &p{
+        font-size:1.2rem;
+    }
+  }
+`
 export default Header;

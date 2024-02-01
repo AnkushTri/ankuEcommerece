@@ -6,11 +6,72 @@ import { CgMenu, CgClose } from "react-icons/cg";
 
 const NavBar = () => {
   const [menuIcon, setMenuIcon] = useState();
+  return (
+    <Nav>
+      <div className={menuIcon ? "navbar active" : "navbar"}>
+        <ul className="navbar-lists">
+          <li>
+            <Link
+              to="/"
+              className="navbar-link"
+              onClick={() => setMenuIcon(false)}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/about"
+              className="navbar-link "
+              onClick={() => setMenuIcon(false)}>
+              About
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/products"
+              className="navbar-link "
+              onClick={() => setMenuIcon(false)}>
+              Products
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/contact"
+              className="navbar-link "
+              onClick={() => setMenuIcon(false)}>
+              Contact
+            </Link>
+          </li>
+          <li>
+            <Link to="/cart" className="navbar-link cart-trolley--link">
+              <FiShoppingCart className="cart-trolley" />
+              <span className="cart-total--item"> 10 </span>
+            </Link>
+          </li>
+        </ul>
 
-  const Nav = styled.nav`
+        {/* two button for open and close of menu */}
+        <div className="mobile-navbar-btn">
+          <CgMenu
+            name="menu-outline"
+            className="mobile-nav-icon"
+            onClick={() => setMenuIcon(true)}
+          />
+          <CgClose
+            name="close-outline"
+            className="mobile-nav-icon close-outline"
+            onClick={() => setMenuIcon(false)}
+          />
+        </div>
+      </div>
+    </Nav>
+  );
+};
+
+const Nav = styled.nav`
     .navbar-lists {
       display: flex;
-      gap: 4.8rem;
+      gap: 4rem;
       align-items: center;
 
       .navbar-link {
@@ -18,7 +79,7 @@ const NavBar = () => {
         &:visited {
           display: inline-block;
           text-decoration: none;
-          font-size: 1.8rem;
+          font-size: 1.5rem;
           font-weight: 500;
           text-transform: uppercase;
           color: ${({ theme }) => theme.colors.black};
@@ -160,67 +221,5 @@ const NavBar = () => {
       }
     }
   `;
-
-  return (
-    <Nav>
-      <div className={menuIcon ? "navbar active" : "navbar"}>
-        <ul className="navbar-lists">
-          <li>
-            <Link
-              to="/"
-              className="navbar-link"
-              onClick={() => setMenuIcon(false)}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/about"
-              className="navbar-link "
-              onClick={() => setMenuIcon(false)}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/products"
-              className="navbar-link "
-              onClick={() => setMenuIcon(false)}>
-              Products
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/contact"
-              className="navbar-link "
-              onClick={() => setMenuIcon(false)}>
-              Contact
-            </Link>
-          </li>
-          <li>
-            <Link to="/cart" className="navbar-link cart-trolley--link">
-              <FiShoppingCart className="cart-trolley" />
-              <span className="cart-total--item"> 10 </span>
-            </Link>
-          </li>
-        </ul>
-
-        {/* two button for open and close of menu */}
-        <div className="mobile-navbar-btn">
-          <CgMenu
-            name="menu-outline"
-            className="mobile-nav-icon"
-            onClick={() => setMenuIcon(true)}
-          />
-          <CgClose
-            name="close-outline"
-            className="mobile-nav-icon close-outline"
-            onClick={() => setMenuIcon(false)}
-          />
-        </div>
-      </div>
-    </Nav>
-  );
-};
 
 export default NavBar;
