@@ -32,7 +32,7 @@ const Footer = () => {
                         </div>
                         <div className="footer-subscribe">
                             <h3>Subscribe to get important updates</h3>
-                            <form action="#">
+                            <form>
                                 <input type="email" name="email" placeholder="YOUR E-MAIL" />
                                 <input type="submit" value="subscribe" />
                             </form>
@@ -63,8 +63,9 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="footer-contact">
-                            <h3>Call Us</h3>
+                            <h3>Get in Touch</h3>
                             <h3>+91 7070250751</h3>
+                            <h3>anku@ankuraj.com</h3>
                         </div>
                     </div>
 
@@ -87,13 +88,12 @@ const Footer = () => {
 };
 
 const Wrapper = styled.section`
-margin-top:-2rem;
+margin-top:1rem;
   .iSIFGq {
     margin: 0;
   }
-  input{
-    padding:0.7rem;
-  }
+
+
   .contact-short {
     max-width: 60vw;
     margin: auto;
@@ -119,10 +119,12 @@ margin-top:-2rem;
     p {
       color: ${({ theme }) => theme.colors.white};
     }
+    input{
+      padding:1.2rem;
+    }
     .footer-social--icons {
       display: flex;
       gap: 2rem;
-
       div {
         padding: 1rem;
         border-radius: 50%;
@@ -161,6 +163,10 @@ margin-top:-2rem;
       .grid div:last-child {
         justify-self: center;
       }
+    }
+
+    input{
+      margin-right:1rem;
     }
 
     footer {

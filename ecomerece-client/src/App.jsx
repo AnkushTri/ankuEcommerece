@@ -1,7 +1,7 @@
 import {BrowserRouter, Routes,Route} from "react-router-dom"
 import './App.css'
 import Home from './pages/Home'
-import About from "./pages/About"
+// import About from "./pages/About"
 import Products from "./pages/Products"
 import SingleProduct from "./pages/SingleProduct"
 import Cart from "./components/Cart"
@@ -11,6 +11,7 @@ import { GlobalStyle } from './components/GlobalStyle'
 import { ThemeProvider } from 'styled-components'
 import Header from "./components/Header"
 import Footer from "./components/Footer"
+import Location from "./components/Location"
 
 const App = () => {
 
@@ -47,11 +48,12 @@ const App = () => {
       <Header/>
       <Routes>
         <Route path="/" element={<Home />}/>
-        <Route path="/about" element={<About />}/>
+        {/* <Route path="/about" element={<About />}/> */}
         <Route path="/products" element={<Products />}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/singleproduct/:id" element={<SingleProduct/>}/>
         <Route path="/cart" element={<Cart />}/>
+        <Route path="/location" element={<Location />}/>
         <Route path="*" element={<Error/>}/>
       </Routes>
       <Footer/>

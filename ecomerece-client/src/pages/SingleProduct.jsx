@@ -11,8 +11,6 @@ import { TbTruckDelivery, TbReplace } from "react-icons/tb";
 import Star from "../components/Star";
 import AddToCart from "../components/AddToCart";
 
-
-
 const SingleProduct = () => {
   const { getSingleProduct, isSingleLoading, singleProduct } =
     useAppContext();
@@ -80,7 +78,7 @@ const SingleProduct = () => {
 
               <div className="product-warranty-data">
                 <TbTruckDelivery className="warranty-icon" />
-                <p>Thapa Delivered </p>
+                <p>Ankush Delivered </p>
               </div>
 
               <div className="product-warranty-data">

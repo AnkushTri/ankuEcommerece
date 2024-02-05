@@ -44,24 +44,24 @@ const Services = () => {
 };
 
 const Wrapper = styled.section`
-  padding: 9rem 0;
+  padding: 5rem 0;
 
   .grid {
-    gap: 4.8rem;
+    gap: 4rem;
   }
 
   .services-1,
   .services-2,
   .services-3 {
     width: auto;
-    height: 30rem;
+    height: 22rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     background: ${({ theme }) => theme.colors.bg};
     text-align: center;
-    border-radius: 2rem;
+    border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
   }
 
@@ -92,14 +92,14 @@ const Wrapper = styled.section`
 
   h3 {
     margin-top: 1.4rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .icon {
     /* font-size: rem; */
-    width: 8rem;
-    height: 8rem;
-    padding: 2rem;
+    width: 7rem;
+    height: 5rem;
+    padding: 1rem;
     border-radius: 50%;
     background-color: #fff;
     color: #5138ee;

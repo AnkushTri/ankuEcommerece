@@ -3,27 +3,45 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FiShoppingCart } from "react-icons/fi";
 import { CgMenu, CgClose } from "react-icons/cg";
+import { FaLocationDot } from "react-icons/fa6";
+import Location from "./Location";
+import { FaSearch } from "react-icons/fa";
 
 const NavBar = () => {
   const [menuIcon, setMenuIcon] = useState();
+
   return (
     <Nav>
       <div className={menuIcon ? "navbar active" : "navbar"}>
         <ul className="navbar-lists">
           <li>
-            <Link
-              to="/"
-              className="navbar-link"
-              onClick={() => setMenuIcon(false)}>
-              Home
-            </Link>
+            <div
+              // to="/"
+              className="navbar-search">
+               {/* onClick={() => setMenuIcon(false)} */}
+              <input type="text"  placeholder="enter your products" className="search"/>
+              <div className="search-icon">
+                <FaSearch/>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div
+              className="loc">
+              {/* // onClick={() => setMenuIcon(false)} */}
+               <div className="location">
+              <div><FaLocationDot /></div>
+              {/* <div> Location</div> */}
+                <Location />
+              </div>
+            </div>
           </li>
           <li>
             <Link
-              to="/about"
+              to="/"
               className="navbar-link "
               onClick={() => setMenuIcon(false)}>
-              About
+              Home
             </Link>
           </li>
           <li>
@@ -69,6 +87,24 @@ const NavBar = () => {
 };
 
 const Nav = styled.nav`
+
+.location{
+  display:flex;
+  gap:1rem;
+  align-items:center;
+  font-size:2rem;
+}
+.search{
+  padding:0.8rem 3rem;
+}
+.navbar-search{
+  display:flex;
+  align-items:center;
+  gap:1.5rem;
+}
+.search-icon{
+  font-size:2rem;
+}
     .navbar-lists {
       display: flex;
       gap: 4rem;
@@ -184,7 +220,7 @@ const Nav = styled.nav`
         opacity: 0;
         transform: translateX(100%);
         /* transform-origin: top; */
-        transition: all 3s linear;
+        // transition: all 3s linear;
       }
 
       .active .navbar-lists {
@@ -193,7 +229,7 @@ const Nav = styled.nav`
         transform: translateX(0);
         z-index: 999;
         transform-origin: right;
-        transition: all 3s linear;
+        // transition: all 3s linear;
 
         .navbar-link {
           font-size: 4.2rem;
@@ -210,7 +246,7 @@ const Nav = styled.nav`
         .cart-total--item {
           width: 4.2rem;
           height: 4.2rem;
-          font-size: 2rem;
+          font-size: 2.5rem;
         }
       }
 

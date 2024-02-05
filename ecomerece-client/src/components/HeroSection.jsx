@@ -1,9 +1,22 @@
-import React from 'react'
+import React,{useState} from 'react'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Button } from '../styles/Button'
+import Carousel from './Carousel';
 
 const HeroSection = ({name}) => {
+
+  const [more,setMore]=useState(false);
+  const handleClick=()=>{
+    setMore(!more)
+  }
+
+  const carouselImages = [
+    './images/hero.jpg',
+    './images/herologo.avif',
+    './images/logoshop.png'
+  ];
+
   return (
     <Wrapper>
     <div className='container'>
@@ -13,16 +26,18 @@ const HeroSection = ({name}) => {
                     Welcome to
              </p>
              <h1>{name}</h1>
-             <p>You will feel, world best shoping experience as our always priotity to customer satisficatiion and much more, we will deal with all kind of shoping products, Hope so you enjoyed it</p>
+            <p>You will feel, world best shoping experience as our always priotity to customer satisficatiion and much more, we will deal with all kind of shoping products, Hope so you enjoyed it {more && "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nulla dolore aliquid. Ex, eaque numquam ad iste magni cumque sapiente. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae, deserunt impedit voluptas aut provident delectus dolorem fugiat reiciendis nulla ab quisquam reprehenderit itaque vitae id. Numquam natus a voluptas tempora?"}
+            </p> 
         <Link>
-        <Button>Show more</Button>
+        <Button onClick={handleClick}>{!more ?"Show more" :"Show less"}</Button>
         </Link>
     </div>
     <div className="hero-section-image">
-        <figure>
-            <img src="images/hero.jpg" 
+        <figure className='img-style'>
+              <Carousel images={carouselImages} />
+            {/* <img src="images/herologo.avif" 
             alt="hero image" 
-            className='img-style'/>
+            className='img-style'/> */}
         </figure>
     </div>
     </div>
