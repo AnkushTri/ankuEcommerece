@@ -6,7 +6,11 @@ import { AppContextProvider } from './context/productcontext.jsx'
 import { CartProvider } from './context/cartcontext.jsx'
 import { FilterContextProvider } from './context/filter_context.jsx'
 
+import { Provider } from 'react-redux';
+import store from './store/store.jsx';
+
 ReactDOM.createRoot(document.getElementById('root')).render(
+  <Provider store={store}>
   <React.StrictMode>
   <AppContextProvider>
     <CartProvider>
@@ -15,5 +19,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       </FilterContextProvider>
       </CartProvider>
   </AppContextProvider>
-  </React.StrictMode >,
+  </React.StrictMode >
+  </Provider>,
 )

@@ -4,6 +4,11 @@ import { FaCheck } from "react-icons/fa";
 import FormatPrice from "./FormatPrice";
 import { Button } from "../styles/Button";
 
+// import { clearFilters } from "../store/slice/filterSlice";
+
+//try redux
+// import {  useDispatch } from "react-redux";
+
 const FilterSection = () => {
   const {
     filters: { text, category, color, price, maxPrice, minPrice },
@@ -11,6 +16,8 @@ const FilterSection = () => {
     all_products,
     clearFilters,
   } = useFilterContext();
+
+  // const dispatch=useDispatch();
 
   // get the unique values of each property
   const getUniqueData = (data, attr) => {
@@ -135,7 +142,11 @@ const FilterSection = () => {
       </div>
 
       <div className="filter-clear">
-        <Button className="btn" onClick={clearFilters}>
+        <Button className="btn" 
+
+        onClick={clearFilters}
+        // onClick={dispatch(clearFilters)}
+        >
           Clear Filters
         </Button>
       </div>
